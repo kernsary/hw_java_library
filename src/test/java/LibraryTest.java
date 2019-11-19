@@ -49,4 +49,12 @@ public class LibraryTest {
         stuffy.addBookToStock(dusty2);
         assertEquals(false, stuffy.checkIfStockAtCapacity());
     }
+
+    @Test
+    public void canRemoveBookFromStock() {
+        stuffy.addBookToStock(dusty1);
+        stuffy.addBookToStock(dusty2);
+        stuffy.removeBookFromStock(dusty1);
+        assertEquals(1, stuffy.countStock());
+    }
 }

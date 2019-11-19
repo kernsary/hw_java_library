@@ -29,4 +29,8 @@ public class Library {
     public Boolean checkIfStockAtCapacity() {
         return stock.size() >= capacity;
     }
+
+    public void removeBookFromStock(Book book) {
+        stock.remove(book.getTitle());
+    }
 }
