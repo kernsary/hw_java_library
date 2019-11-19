@@ -6,12 +6,16 @@ import static org.junit.Assert.assertEquals;
 public class LibraryTest {
 
     private Library stuffy;
-    private Book dusty;
+    private Book dusty1;
+    private Book dusty2;
+    private Book dusty3;
 
     @Before
     public void before() {
         stuffy = new Library(3);
-        dusty = new Book("Shardik", "Richard Adams", "Fantasy");
+        dusty1 = new Book("Shardik", "Richard Adams", "Fantasy");
+        dusty2 = new Book("Watership Down", "Richard Adams", "Fantasy");
+        dusty3 = new Book("Shardik Returns", "Richard Adams", "Fantasy");
     }
 
     @Test
@@ -26,23 +30,23 @@ public class LibraryTest {
 
     @Test
     public void canAddBookToStock() {
-        stuffy.addBookToStock(dusty);
+        stuffy.addBookToStock(dusty1);
         assertEquals(1, stuffy.countStock());
 
     }
 
     @Test
     public void canTellWhenStockIsAtCapacity() {
-        stuffy.addBookToStock(dusty);
-        stuffy.addBookToStock(dusty);
-        stuffy.addBookToStock(dusty);
+        stuffy.addBookToStock(dusty1);
+        stuffy.addBookToStock(dusty2);
+        stuffy.addBookToStock(dusty3);
         assertEquals(true, stuffy.checkIfStockAtCapacity());
     }
 
     @Test
     public void canTellWhenStockIsNotAtCapacity() {
-        stuffy.addBookToStock(dusty);
-        stuffy.addBookToStock(dusty);
+        stuffy.addBookToStock(dusty1);
+        stuffy.addBookToStock(dusty2);
         assertEquals(false, stuffy.checkIfStockAtCapacity());
     }
 }

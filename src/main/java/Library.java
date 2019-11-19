@@ -1,12 +1,15 @@
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Library {
 
-    private ArrayList<Book> stock;
+//    private ArrayList<Book> stock;
+    private HashMap stock;
     private int capacity;
 
     public Library(int capacity) {
-        this.stock = new ArrayList<Book>();
+//        this.stock = new ArrayList<Book>();
+        this.stock = new HashMap();
         this.capacity = capacity;
     }
 
@@ -19,7 +22,8 @@ public class Library {
     }
 
     public void addBookToStock(Book newBook) {
-        stock.add(newBook);
+//        stock.add(newBook);
+        stock.put(newBook.getTitle(), newBook);
     }
 
     public Boolean checkIfStockAtCapacity() {
