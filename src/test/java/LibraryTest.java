@@ -58,12 +58,12 @@ public class LibraryTest {
         assertEquals(1, stuffy.countStock());
     }
 
-//    @Test
-//    public void canGetGenreCount() {
-//        stuffy.addBookToStock(dusty1);
-//        stuffy.addBookToStock(dusty2);
-//        stuffy.addBookToStock(dusty3);
-//        assertEquals(2, stuffy.getGenreCounts.get("Fantasy"));
-//        assertEquals(1, stuffy.getGenreCounts.get("Romance"));
-//    }
+    @Test
+    public void canGetGenreCount() {
+        stuffy.addBookToStock(dusty1);
+        stuffy.addBookToStock(dusty2);
+        stuffy.addBookToStock(dusty3);
+        assertEquals(2, stuffy.getGenreCount("Fantasy"));
+        assertEquals(1, stuffy.getGenreCount("Romance"));
+    }
 }

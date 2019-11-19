@@ -24,16 +24,20 @@ public class Library {
         return stock.size();
     }
 
+    public int getGenreCount(String genre) {
+        return genreCount.get(genre);
+    }
+
     public void addBookToStock(Book newBook) {
 //        stock.add(newBook);
         stock.put(newBook.getTitle(), newBook);
-//        String genre = newBook.getGenre();
-//        if(genreCount.containsKey(genre)) {
-//            genreCount.get(genre) = genreCount.get(genre) + 1;
-//        }
-//        else {
-//            genreCount.put(genre, 1);
-//        }
+        String genre = newBook.getGenre();
+        if(genreCount.containsKey(genre)) {
+            genreCount.put(genre, genreCount.get(genre) + 1);
+        }
+        else {
+            genreCount.put(genre, 1);
+        }
     }
 
     public Boolean checkIfStockAtCapacity() {
