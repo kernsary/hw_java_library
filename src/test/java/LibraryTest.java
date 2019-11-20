@@ -59,11 +59,11 @@ public class LibraryTest {
     }
 
     @Test
-    public void canGetGenreCount() {
+    public void canGetGenreTally() {
         stuffy.addBookToStock(dusty1);
         stuffy.addBookToStock(dusty2);
         stuffy.addBookToStock(dusty3);
-        assertEquals(2, stuffy.getGenreCount("Fantasy"));
-        assertEquals(1, stuffy.getGenreCount("Romance"));
+        assertEquals(2, stuffy.getGenreTally("Fantasy"));
+        assertEquals(1, stuffy.getGenreTally("Romance"));
     }
 }

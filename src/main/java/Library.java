@@ -6,13 +6,13 @@ public class Library {
 
 //    private ArrayList<Book> stock;
     private HashMap<String, Book> stock;
-    private HashMap<String, Integer> genreCount;
+    private HashMap<String, Integer> genreTallies;
     private int capacity;
 
     public Library(int capacity) {
 //        this.stock = new ArrayList<Book>();
         this.stock = new HashMap<String, Book>();
-        this.genreCount = new HashMap<String, Integer>();
+        this.genreTallies = new HashMap<String, Integer>();
         this.capacity = capacity;
     }
 
@@ -24,19 +24,19 @@ public class Library {
         return stock.size();
     }
 
-    public int getGenreCount(String genre) {
-        return genreCount.get(genre);
+    public int getGenreTally(String genre) {
+        return genreTallies.get(genre);
     }
 
     public void addBookToStock(Book newBook) {
 //        stock.add(newBook);
         stock.put(newBook.getTitle(), newBook);
         String genre = newBook.getGenre();
-        if(genreCount.containsKey(genre)) {
-            genreCount.put(genre, genreCount.get(genre) + 1);
+        if(genreTallies.containsKey(genre)) {
+            genreTallies.put(genre, genreTallies.get(genre) + 1);
         }
         else {
-            genreCount.put(genre, 1);
+            genreTallies.put(genre, 1);
         }
     }
 
